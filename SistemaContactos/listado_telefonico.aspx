@@ -29,7 +29,7 @@
                     List<Negocio.Contacto> listaContacto = (List<Negocio.Contacto>)Session["listaContacto"];
                     if(Session["listaContacto"] != null)
                     {
-                            foreach (Negocio.Contacto c in listaContacto.OrderBy(c => c.Apellido).OrderBy(c => c.Telefono.IndexOf(c.Telefono,0)))
+                            foreach (Negocio.Contacto c in listaContacto.OrderBy(c => c.Apellido).OrderBy(c=> c.Telefonos.Equals("Fijo")).OrderBy(c=> c.Telefonos.Equals("Movil")))
                             {
             %>
             <tr>
@@ -40,7 +40,7 @@
                     <%=c.Nombre %>
                 </td>
                 <td>
-                    <%=c.Telefono %>
+                    <%=c.Telefonos %>
                 </td>
             </tr>
             <% 
