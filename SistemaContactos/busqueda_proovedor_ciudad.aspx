@@ -61,6 +61,10 @@
                     {
                         eliminarContacto();
                     }
+                    else if (Request["btnModificar"] != null)
+                    {
+                        modificarContacto();
+                    }
                     if(Session["listaContacto"] != null)
                     {
                         if (btnBuscar != null && txtCiudadBuscar.Text.Length > 0)
@@ -75,7 +79,6 @@
                 </td>
                 <td>
                     <input name="txtRut" type="text" value="<%=c.Rut %>"/>
-                    <input name="txtRutHidden" type="hidden" value="<%=c.Rut %>"/>
                 </td>
                 <td>
                     <input name="txtNombre" type="text" value="<%=c.Nombre %>"/>
@@ -94,6 +97,9 @@
                 </td>
                 <td>
                     <button id="btnEliminar" name="btnEliminar" value="<%=c.Rut %>">Eliminar</button>
+                </td>
+                <td>
+                    <button id="btnModificar" name="btnModificar" value="<%=c.Rut %>">Modificar</button>
                 </td>
                 </tr>
             <%                  

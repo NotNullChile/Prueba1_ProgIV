@@ -7,7 +7,7 @@
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" method="post" runat="server">
     <div>
                 <table style="width: 100%" >
             <tr>
@@ -63,7 +63,118 @@
             </tr>
         </table>
         <hr />
-
+        <table>
+            <%
+                List<Negocio.Contacto> contactoModificado = (List<Negocio.Contacto>)Session["modificarContacto"];
+                List<Negocio.Contacto> listaContacto = (List<Negocio.Contacto>)Session["listaContacto"];
+            if (Session["modificarContacto"] != null)
+            {
+                for (int i = 0; i < listaContacto.Count;i++ )
+                {
+                    if (  listaContacto.ElementAt(i).Rut == SistemaContactos.busqueda_apellido.rutModificar
+                        ||listaContacto.ElementAt(i).Rut == SistemaContactos.busqueda_proovedor_ciudad.rutModificar
+                        ||listaContacto.ElementAt(i).Rut == SistemaContactos.busqueda_cliente_dominio.rutModificar)
+                    { 
+                 %>
+            <tr>
+                <td>
+                    <asp:Label ID="lblTipoContato" runat="server" Text="Tipo de Contacto"></asp:Label></td>
+                <td>
+                    <select name="ddlTipoContacto">
+                    <%
+                        if (listaContacto.ElementAt(i).TipoContacto == "Cliente")
+                    {
+                    %>
+                      <option value="Cliente">Cliente</option>
+                    <%
+                    }
+                    else
+                    {
+                    %>
+                      <option value="Proveedor">Proveedor</option>
+                   <%} %>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:label text="Rut" ID="lblRut" runat="server" />
+                    
+                </td>
+                <td>
+                    <input name="txtRut" type="text" placeholder="<%=listaContacto.ElementAt(i).Rut%>" />                   
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:label text="Nombre" ID="lblNombre" runat="server" />
+                </td>
+                <td>
+                    <input name="txtNombre" type="text" placeholder="<%=listaContacto.ElementAt(i).Nombre%>" />               
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lblApellido" runat="server" Text="Apellido"></asp:Label>
+                </td>
+                <td>
+                    <input name="txtApellido" type="text" placeholder="<%=listaContacto.ElementAt(i).Apellido%>" />                 
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lblCiudad" runat="server" Text="Ciudad"></asp:Label>
+                </td>
+                <td>                  
+                    <input name="txtCiudad" type="text" placeholder="<%=listaContacto.ElementAt(i).Ciudad%>" />   
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lblCorreo" runat="server" Text="Correo"></asp:Label>
+                </td>
+                <td>                   
+                    <input name="txtCorreo" type="text" placeholder="<%=listaContacto.ElementAt(i).Email%>" />  
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lblTipoTelefono" runat="server" Text="Tipo Teléfono"></asp:Label>
+                </td>
+                <td>
+                    <asp:DropDownList ID="ddlTipoFono" runat="server">
+                        <asp:ListItem>Fijo</asp:ListItem>
+                        <asp:ListItem>Movil</asp:ListItem>
+                    </asp:DropDownList>                   
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lblTelefono" runat="server" Text="Telefono"></asp:Label>
+                </td>
+                <td>                
+                    <input name="txtTelefono" type="text" placeholder="<%=listaContacto.ElementAt(i).Telefono%>" />  
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                     <asp:Button ID="btnModificar" runat="server" Text="Modificar" OnClick="btnModificar_Click"  />
+                </td>
+            </tr>
+            <%
+                    }
+                }
+            }
+            else
+            {
+                Response.Redirect("index.aspx");
+            } 
+            %>
+        </table>
 
         
     </div>

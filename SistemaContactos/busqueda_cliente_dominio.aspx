@@ -59,6 +59,10 @@
                     {
                         eliminarContacto();
                     }
+                    else if (Request["btnModificar"] != null)
+                    {
+                        modificarContacto();
+                    }
                     if(Session["listaContacto"] != null)
                     {
                         if (btnBuscar != null && txtDominio.Text.Length > 0)
@@ -91,6 +95,9 @@
                 </td>
                 <td>
                     <button id="btnEliminar" name="btnEliminar" value="<%=c.Rut %>">Eliminar</button>
+                </td>
+                <td>
+                    <button id="btnModificar" name="btnModificar" value="<%=c.Rut %>">Modificar</button>
                 </td>
                 </tr>
             <% 

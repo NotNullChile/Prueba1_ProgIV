@@ -12,8 +12,74 @@ namespace SistemaContactos
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            //cargar();
+        }
+        public void cargar()
+        {
+            //List<Negocio.Contacto> contactoModificado = (List<Contacto>)Session["modificarContacto"];
+            //if (Session["modificarContacto"] != null)
+            //{
+            //    foreach(Contacto c in contactoModificado)
+            //    {
+            //        txtRut.Text = c.Rut;
+            //        //ddlTipoContacto.Text = c.TipoContacto;
+            //        txtNombre.Text = c.Nombre;
+            //        txtApellido.Text = c.Apellido;
+            //        txtCiudad.Text = c.Ciudad;
+            //        txtCorreo.Text = c.Email;
+            //        txtTelefono.Text = c.Telefono;
+            //    }
+            //}
+            //else
+            //{
+            //    Response.Redirect("index.aspx");
+            //}
+        }
+        public void modificar()
+        {
+            
+            List<Negocio.Contacto> contactoModificado = (List<Contacto>)Session["modificarContacto"];
+            List<Negocio.Contacto> listaContacto = (List<Negocio.Contacto>)Session["listaContacto"];
+
+            if(Session["modificarContacto"] != null)
+            { 
+                for(int i = 0; i < listaContacto.Count ; i++)
+                {
+                    if (listaContacto.ElementAt(i).Rut == contactoModificado.ElementAt(i).Rut)
+                    {
+                        listaContacto.RemoveAt(i);
+                        break;
+                    }
+                }
+                string rut = Request["txtRut"];
+                string tipoPersona = Request["ddlTipoContacto"];
+                string nombre = Request["txtNombre"];
+                string apellido = Request["txtApellido"];
+                string ciudad = Request["txtCiudad"];
+                string correo = Request["txtCorreo"];
+                string numero = null;
+                if (ddlTipoFono.Text == "Fijo")
+                {
+                    numero = "0" + Request["txtTelefono"];
+                }
+                if (ddlTipoFono.Text == "Movil")
+                {
+                    numero = "1" + Request["txtTelefono"];
+                }
+                
+                Contacto c = new Contacto(rut, nombre, apellido, ciudad, correo, numero, tipoPersona);
+
+                listaContacto.Add(c);
+
+                Session["listaContacto"] = listaContacto;
+
+                Response.Redirect("index.aspx");
+            }
         }
 
+        protected void btnModificar_Click(object sender, EventArgs e)
+        {
+            modificar();
+        }
     }
 }
