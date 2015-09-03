@@ -10,7 +10,7 @@
 namespace SistemaContactos {
     
     
-    public partial class listado_telefonico {
+    public partial class agregar_numero_rick {
         
         /// <summary>
         /// Control form1.
@@ -20,5 +20,14 @@ namespace SistemaContactos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        
+        /// <summary>
+        /// Control btnAgregar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAgregar;
     }
 }

@@ -58,7 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="agregar_contacto.aspx" />
+    <Content Include="agregar_numero_rick.aspx" />
     <Content Include="agregar_telefono.aspx" />
+    <Content Include="agregar_telefonos_listas.aspx" />
     <Content Include="busquedas.aspx" />
     <Content Include="busqueda_apellido.aspx" />
     <Content Include="busqueda_cliente_dominio.aspx" />
@@ -85,12 +87,26 @@
     <Compile Include="agregar_contacto.aspx.designer.cs">
       <DependentUpon>agregar_contacto.aspx</DependentUpon>
     </Compile>
+    <Compile Include="agregar_numero_rick.aspx.cs">
+      <DependentUpon>agregar_numero_rick.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="agregar_numero_rick.aspx.designer.cs">
+      <DependentUpon>agregar_numero_rick.aspx</DependentUpon>
+    </Compile>
     <Compile Include="agregar_telefono.aspx.cs">
       <DependentUpon>agregar_telefono.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="agregar_telefono.aspx.designer.cs">
       <DependentUpon>agregar_telefono.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="agregar_telefonos_listas.aspx.cs">
+      <DependentUpon>agregar_telefonos_listas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="agregar_telefonos_listas.aspx.designer.cs">
+      <DependentUpon>agregar_telefonos_listas.aspx</DependentUpon>
     </Compile>
     <Compile Include="busquedas.aspx.cs">
       <DependentUpon>busquedas.aspx</DependentUpon>
