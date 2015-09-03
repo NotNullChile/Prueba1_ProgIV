@@ -44,19 +44,7 @@
                 <td>
                     <a href="busquedas.aspx">
                         <asp:Image ImageUrl="img/busquedas.png" runat="server" />
-                        <br /> Buscar <br />Contacto
-                    </a>
-                </td>
-                <td>
-                    <a href="modificar_contacto.aspx">
-                        <asp:Image ImageUrl="img/modificar_contacto.png" runat="server" />
-                        <br /> Modificar <br />Contacto
-                    </a>
-                </td>
-                <td>
-                    <a href="eliminar_contacto.aspx">
-                        <asp:Image ImageUrl="img/eliminar_contacto.png" runat="server" />
-                        <br /> Eliminar <br />Contacto
+                        <br /> Buscar, eliminar o <br />Modificar Contacto
                     </a>
                 </td>
                 <td>
