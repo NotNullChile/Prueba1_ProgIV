@@ -16,7 +16,11 @@ namespace SistemaContactos
             if (Session["agregarNumeros"] != null)
             {
                 List<Contacto> lc = (List<Contacto>)Session["agregarNumeros"];
-                Contacto contacto = lc.ElementAt(0);
+                for (int c = 0; c < lc.Count; c++ )
+                {
+                    if(lc.ElementAt(c).Rut == SistemaContactos.agregar_telefonos_listas.rutObtenido)
+                    {
+                Contacto contacto = lc.ElementAt(c);
                 Session["contactoSiendoModificado"] = contacto;
                 lblRutGuardado.Text = contacto.Rut;
                 lblNombreGuardado.Text = contacto.Nombre;
@@ -26,6 +30,8 @@ namespace SistemaContactos
                 int maximo = contacto.Telefonos.Count();
                 string listaTelefonos = String.Join("\r\n", contacto.Telefonos, 0, maximo);
                 lblTelefonosGuardados.Text = listaTelefonos;
+                    }
+                }
             }
             else
             {
@@ -45,16 +51,23 @@ namespace SistemaContactos
                 numero = "Movil:" + txtTelefono.Text;
             }
             Contacto contactoModificado = (Contacto)Session["ContactoSiendoModificado"];
-            for (int i = 0; i < 99; i++)
-			{
-			    if (contactoModificado.Telefonos[i] != null)
-	            {}
-                else
-	            {
-                    contactoModificado.Telefonos[i] = numero;
-                    break;
-	            }
-			}
+            List<Contacto> lc = (List<Contacto>)Session["agregarNumeros"];
+            for (int c = 0; c < lc.Count; c++ )
+            {
+                if(lc.ElementAt(c).Rut == SistemaContactos.agregar_telefonos_listas.rutObtenido)
+                {
+                    for (int i = 0; i < 99; i++)
+                    {
+                        if (contactoModificado.Telefonos[i] != null)
+                        { }
+                        else
+                        {
+                            contactoModificado.Telefonos[i] = numero;
+                            break;
+                        }
+                    }
+                }
+            }
             Response.Redirect("agregar_telefono.aspx");
         }
     }

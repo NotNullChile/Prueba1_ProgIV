@@ -19,7 +19,8 @@ namespace SistemaContactos
             List<Negocio.Contacto> listaContacto = (List<Negocio.Contacto>)Session["listaContacto"];
             List<Contacto> masNumero = new List<Contacto>();
 
-            string rut = Request["txtRut"];
+            string rut = Request["btnAgregarNumero"];
+            string rut2 = Request.Form["btnAgregarNumero"];
             if (Session["listaContacto"] != null)
             {
                 for (int i = 0; i < listaContacto.Count; i++)
