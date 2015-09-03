@@ -57,7 +57,7 @@
                     List<Negocio.Contacto> listaContacto = (List<Negocio.Contacto>)Session["listaContacto"];
                     if(Session["listaContacto"] != null)
                     {
-                        if (btnBuscar != null)
+                        if (btnBuscar != null && txtApellidoBuscar.Text.Length > 0)
                         {
                             foreach (Negocio.Contacto c in listaContacto.Where(c => c.Apellido.ToUpper().Equals(txtApellidoBuscar.Text.ToUpper())))
                             {
