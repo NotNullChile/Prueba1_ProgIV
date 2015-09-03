@@ -20,8 +20,8 @@
                     <label style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: large; font-weight: bold; font-style: normal; color: #FF0000">Módulo de Gestión de Contactos</label></td>
             </tr>
             </table>
-        <br />        
-            <table style="width: 100%">
+<hr />  
+            <table style="width: 100%; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: medium; font-weight: bold; color: #000000; background-color: #C0C0C0;">
             <tr style="align-content:center">
                 <td>
                     <a href="index.aspx">
@@ -67,6 +67,7 @@
                 </td>
             </tr>
         </table>
+        <hr />
     </div>
     </form>
 </body>
