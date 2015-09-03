@@ -40,7 +40,10 @@
                     <%=c.Nombre %>
                 </td>
                 <td>
-                    <%=c.Telefonos %>
+                    <%
+                        int maximo = c.Telefonos.Count();
+                        string listaTelefonos = String.Join("  ", c.Telefonos, 0, maximo);%>
+                         <%=listaTelefonos%>
                 </td>
             </tr>
             <% 
