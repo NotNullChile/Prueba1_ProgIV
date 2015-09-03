@@ -64,6 +64,7 @@
     <Content Include="busqueda_cliente_dominio.aspx" />
     <Content Include="busqueda_proovedor_ciudad.aspx" />
     <Content Include="eliminar_contacto.aspx" />
+    <Content Include="img\index_logo.png" />
     <Content Include="img\home.png" />
     <Content Include="img\listado_telefonico.png" />
     <Content Include="img\agregar_contacto.png" />

@@ -19,9 +19,9 @@
                 <td>
                     <label style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: large; font-weight: bold; font-style: normal; color: #FF0000">Módulo de Gestión de Contactos</label></td>
             </tr>
-            </table>
-<hr />  
-            <table style="width: 100%; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: medium; font-weight: bold; color: #000000; background-color: #C0C0C0;">
+        </table>
+        <hr />  
+        <table style="width: 100%; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: medium; font-weight: bold; color: #000000; background-color: #CCCCCC; text-align: center;">
             <tr style="align-content:center">
                 <td>
                     <a href="index.aspx">
@@ -56,6 +56,13 @@
             </tr>
         </table>
         <hr />
+        <table>
+            <tr>
+                <td style="background-color: #99CCFF; width: 100%;"></td>
+                <td>
+                    <asp:Image ImageUrl="img/index_logo.png" runat="server" /></td>
+            </tr>
+        </table>
     </div>
     </form>
 </body>
