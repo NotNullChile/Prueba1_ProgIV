@@ -45,6 +45,7 @@
                 <td>
                     <asp:TextBox ID="txtRut" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="valRut" runat="server" ControlToValidate="txtRut" ErrorMessage="Debe Ingresar un RUT" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:Label ID="lblErrorRut" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>

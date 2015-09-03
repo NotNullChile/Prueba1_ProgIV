@@ -35,9 +35,23 @@ namespace SistemaContactos
                 {
                     numero = "1" + txtTelefono.Text;
                 }
+                bool existeRut = false;
                 if (Session["listaContacto"] != null)
                 {
                     listaContacto = (List<Contacto>)Session["listaContacto"];
+                    for(int i = 0 ; i < listaContacto.Count ;i++)
+                    {
+                        if (listaContacto.ElementAt(i).Rut != txtRut.Text)
+                        {
+                            existeRut = false;
+                        }
+                        else
+                        {
+                            existeRut = true;
+                            break;
+                        }
+
+                    }
                 }
                 //Creación teléfono
 
@@ -49,13 +63,20 @@ namespace SistemaContactos
                 telefonos[0] = numero;
  
                 //Creación persona
-                Contacto c = new Contacto(rut, nombre, apellido, ciudad, correo, telefonos, tipoPersona);
+                if(existeRut == false)
+                {
+                    Contacto c = new Contacto(rut, nombre, apellido, ciudad, correo, telefonos, tipoPersona);
 
-                listaContacto.Add(c);
+                    listaContacto.Add(c);
 
-                Session["listaContacto"] = listaContacto;
+                    Session["listaContacto"] = listaContacto;
 
-                Response.Redirect("index.aspx");
+                    Response.Redirect("index.aspx");
+                }
+                else
+                {
+                    lblErrorRut.Text = "Rut ya existente en el sistema";
+                }
             }
             catch (Exception e)
             {

@@ -102,7 +102,7 @@
                     
                 </td>
                 <td>
-                    <input name="txtRut" type="text" placeholder="<%=listaContacto.ElementAt(i).Rut%>" />                   
+                    <input name="txtRut" type="text" value="<%=listaContacto.ElementAt(i).Rut%>" readonly="true"/>                   
                 </td>
             </tr>
             <tr>
@@ -155,7 +155,7 @@
                     <asp:Label ID="lblTelefono" runat="server" Text="Telefono"></asp:Label>
                 </td>
                 <td>                
-                    <input name="txtTelefono" type="text" placeholder="<%=listaContacto.ElementAt(i).Telefono%>" />  
+                    <input name="txtTelefono" type="text" value="<%=listaContacto.ElementAt(i).Telefonos%>" readonly="true" />  
                 </td>
                 <td>
                 </td>

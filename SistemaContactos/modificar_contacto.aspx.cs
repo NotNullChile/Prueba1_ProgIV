@@ -40,13 +40,14 @@ namespace SistemaContactos
             
             List<Negocio.Contacto> contactoModificado = (List<Contacto>)Session["modificarContacto"];
             List<Negocio.Contacto> listaContacto = (List<Negocio.Contacto>)Session["listaContacto"];
-
+            string[] telefonos = new string[99];
             if(Session["modificarContacto"] != null)
             { 
                 for(int i = 0; i < listaContacto.Count ; i++)
                 {
                     if (listaContacto.ElementAt(i).Rut == contactoModificado.ElementAt(i).Rut)
                     {
+                        telefonos = listaContacto.ElementAt(i).Telefonos;
                         listaContacto.RemoveAt(i);
                         break;
                     }
@@ -58,16 +59,9 @@ namespace SistemaContactos
                 string ciudad = Request["txtCiudad"];
                 string correo = Request["txtCorreo"];
                 string numero = null;
-                if (ddlTipoFono.Text == "Fijo")
-                {
-                    numero = "0" + Request["txtTelefono"];
-                }
-                if (ddlTipoFono.Text == "Movil")
-                {
-                    numero = "1" + Request["txtTelefono"];
-                }
+
                 
-                Contacto c = new Contacto(rut, nombre, apellido, ciudad, correo, numero, tipoPersona);
+                Contacto c = new Contacto(rut, nombre, apellido, ciudad, correo, telefonos, tipoPersona);
 
                 listaContacto.Add(c);
 
