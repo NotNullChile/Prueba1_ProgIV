@@ -33,17 +33,18 @@ namespace SistemaContactos
                     if (agregarNumeros.ElementAt(i).Rut == SistemaContactos.agregar_telefonos_listas.rutObtenido)
                     {
                         int maximoNumeros = agregarNumeros.ElementAt(i).Telefonos.Count();
-                        for (int j = 0; j < maximoNumeros; j++)
+                        for (int j = 1; j < maximoNumeros; j++)
                         {
                             
-                            
+                            int maximo = agregarNumeros.ElementAt(i).Telefonos.Count();
+                            string listaTelefonos = String.Join("  ", agregarNumeros.ElementAt(i).Telefonos, j-1, maximo);
                             string[] telefonos = new string[99];
-                            string s = Request["txtNumeros"+j];
-                            telefonos[j] = Request["txtNumeros" + j];
+                            string s = Request["txtNumeros" + j];
+                            telefonos[j] = (listaTelefonos + s);
                             Contacto c = new Contacto(agregarNumeros.ElementAt(i).Rut, agregarNumeros.ElementAt(i).Nombre, agregarNumeros.ElementAt(i).Apellido, agregarNumeros.ElementAt(i).Ciudad, agregarNumeros.ElementAt(i).Email, telefonos, agregarNumeros.ElementAt(i).TipoContacto);
                             listaContacto.Add(c);
                             Response.Redirect("agregar_numero_rick.aspx");
-                            break;
+                            
                         }
                     }
                 }
