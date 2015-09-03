@@ -60,7 +60,6 @@
     <Content Include="agregar_contacto.aspx" />
     <Content Include="agregar_numero.aspx" />
     <Content Include="agregar_numero_rick.aspx" />
-    <Content Include="agregar_telefono2.aspx" />
     <Content Include="agregar_telefono.aspx" />
     <Content Include="busquedas.aspx" />
     <Content Include="busqueda_apellido.aspx" />
@@ -102,13 +101,6 @@
     </Compile>
     <Compile Include="agregar_numero_rick.aspx.designer.cs">
       <DependentUpon>agregar_numero_rick.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="agregar_telefono2.aspx.cs">
-      <DependentUpon>agregar_telefono2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="agregar_telefono2.aspx.designer.cs">
-      <DependentUpon>agregar_telefono2.aspx</DependentUpon>
     </Compile>
     <Compile Include="agregar_telefono.aspx.cs">
       <DependentUpon>agregar_telefono.aspx</DependentUpon>
