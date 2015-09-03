@@ -14,7 +14,8 @@ namespace Negocio
         private string ciudad;
         private string email;
         private string telefono;
-
+        private string tipoContacto;
+       
         public string Rut
         {
             get { return rut; }
@@ -46,6 +47,11 @@ namespace Negocio
             set { telefono = value; }
         }
 
+        public string TipoContacto
+        {
+            get { return tipoContacto; }
+            set { tipoContacto = value; }
+        }
         public Contacto()
         {
             this.Rut = "Sin Rut";
@@ -54,9 +60,19 @@ namespace Negocio
             this.Ciudad = "Sin Ciudad";
             this.Email = "Sin email";
             this.Telefono = "Sin Telefono";
+            this.tipoContacto = "sin contacto";
         }
-
-        public Contacto(string r, string n, string a, string c, string e, string t)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="r">RUT</param>
+        /// <param name="n">Nombre</param>
+        /// <param name="a">Apellido</param>
+        /// <param name="c">Ciudad</param>
+        /// <param name="e">Email</param>
+        /// <param name="t">Telefono</param>
+        /// <param name="tp">Tipo contacto</param>
+        public Contacto(string r, string n, string a, string c, string e, string t, string tp)
         {
             this.Rut = r;
             this.Nombre = n;
@@ -64,6 +80,7 @@ namespace Negocio
             this.Ciudad = c;
             this.Email = e;
             this.Telefono = t;
+            this.tipoContacto = tp;
         }
 
     }
