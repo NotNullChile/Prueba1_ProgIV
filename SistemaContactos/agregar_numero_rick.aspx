@@ -43,13 +43,13 @@
                         if(btnAgregar != null)
                         { 
                         int maximoNumeros = agregarNumeros.ElementAt(i).Telefonos.Count();
-                        for(int j = 0; j < maximoNumeros ; j++)
+                        for(int j = 1; j < maximoNumeros ; j++)
                         { 
                     %>
                     <input id="txtNumeros" type="text" name="txtNumeros<%=j %>" />
                     <input id="txtNumeros2" type="text" name="txtNumeros2<%=j %>" value="txtNumero2<%=j %>" />
                     <%
-                            break;
+                            
                         }
                         }
                     %>
