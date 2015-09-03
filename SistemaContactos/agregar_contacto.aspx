@@ -90,7 +90,7 @@
                     <asp:Label ID="lblTipoTelefono" runat="server" Text="Tipo Teléfono"></asp:Label>
                 </td>
                 <td>
-                    <asp:DropDownList ID="DropDownList1" runat="server">
+                    <asp:DropDownList ID="ddlTipoFono" runat="server">
                         <asp:ListItem>Fijo</asp:ListItem>
                         <asp:ListItem>Movil</asp:ListItem>
                     </asp:DropDownList>

@@ -26,7 +26,15 @@ namespace SistemaContactos
                 string apellido = txtApellido.Text;
                 string ciudad = txtCiudad.Text;
                 string correo = txtCorreo.Text;
-                string numero = txtTelefono.Text;
+                string numero = null;
+                if(ddlTipoFono.Text == "Fijo")
+                {
+                    numero = "0" + txtTelefono.Text;
+                }
+                if (ddlTipoFono.Text == "Movil")
+                {
+                    numero = "1" + txtTelefono.Text;
+                }
                 if (Session["listaContacto"] != null)
                 {
                     listaContacto = (List<Contacto>)Session["listaContacto"];

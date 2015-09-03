@@ -29,7 +29,7 @@
                 </td>
                 <td>
 
-                    <asp:Button ID="btnBuscar" runat="server" Text="Buscar" Width="87px"  />
+                    <asp:Button ID="btnBuscar" runat="server" Text="Buscar" Width="87px" OnClick="btnBuscar_Click"  />
 
                 </td>
             </tr>
@@ -57,9 +57,9 @@
                     List<Negocio.Contacto> listaContacto = (List<Negocio.Contacto>)Session["listaContacto"];
                     if(Session["listaContacto"] != null)
                     {
-                        if (btnBuscar != null)
+                        if (btnBuscar != null && txtDominio.Text.Length > 0)
                         {
-                            foreach (Negocio.Contacto c in listaContacto.Where(c => c.Email.Contains(txtDominio.Text)).Where(c => c.TipoContacto.Equals("Cliente")))
+                            foreach (Negocio.Contacto c in listaContacto.Where(c => c.Email.ToUpper().Contains(txtDominio.Text.ToUpper())).Where(c => c.TipoContacto.Equals("Cliente")))
                             {
             %>
             <tr>
