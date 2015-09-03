@@ -15,7 +15,7 @@
     </style>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" method="post" runat="server">
     <div>
     
         <table style="width:100%;">
@@ -24,12 +24,12 @@
                     <asp:Label ID="Label1" runat="server" Text="Ingrese apellido a buscar:"></asp:Label>
                 </td>
                 <td class="auto-style2">
-                    <asp:TextBox ID="txtApellido" runat="server" Width="154px" style="margin-left: 0px"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Debe ingresar un apellido" ControlToValidate="txtApellido" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:TextBox ID="txtApellidoBuscar" runat="server" Width="154px" style="margin-left: 0px"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Debe ingresar un apellido" ControlToValidate="txtApellidoBuscar" ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
                 <td>
 
-                    <asp:Button ID="btnBuscar" runat="server" Text="Buscar" Width="87px" />
+                    <asp:Button ID="btnBuscar" runat="server" Text="Buscar" Width="87px" OnClick="btnBuscar_Click" />
 
                 </td>
             </tr>
@@ -49,32 +49,59 @@
                 <td></td>
 
             </tr>
+            
+            <% 
+            
+                 try
+                 {
+                    List<Negocio.Contacto> listaContacto = (List<Negocio.Contacto>)Session["listaContacto"];
+                    if(Session["listaContacto"] != null)
+                    {
+                        if (btnBuscar != null)
+                        {
+                            foreach (Negocio.Contacto c in listaContacto.Where(c => c.Apellido.ToUpper().Equals(txtApellidoBuscar.Text.ToUpper())))
+                            {
+            %>
             <tr>
                 <td>
-                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox> 
+                     <input name="txtTipoContacto" id="txtTipoContacto" type="text" value="<%=c.TipoContacto %>" />
                 </td>
                 <td>
-
+                    <input name="txtRut" type="text" value="<%=c.Rut %>"/>
+                    <input name="txtRutHidden" type="hidden" value="<%=c.Rut %>"/>
                 </td>
                 <td>
-
+                    <input name="txtNombre" type="text" value="<%=c.Nombre %>"/>
                 </td>
                 <td>
-
+                    <input name="txtApellido" type="text" value="<%=c.Apellido %>"/>
                 </td>
                 <td>
-
+                    <input name="txtCiudad" type="text" value="<%=c.Ciudad %>"/> 
                 </td>
                 <td>
-
+                    <input name="txtEmail" type="text" value="<%=c.Email %>"/>
                 </td>
                 <td>
-
+                    <input name="txtTelefono" type="text" value="<%=c.Telefono %>"/>
                 </td>
                 <td>
-
                 </td>
-            </tr>
+                </tr>
+                <% 
+                            }
+                        }
+                    }
+                    else
+                    {
+                        Response.Redirect("index.aspx");
+                    }
+                }
+                catch (Exception)
+                {
+                }
+                %>
+            
         </table>
     </div>
     </form>
