@@ -39,9 +39,17 @@ namespace SistemaContactos
                 {
                     listaContacto = (List<Contacto>)Session["listaContacto"];
                 }
+                //Creación teléfono
 
+                Telefono t = new Telefono((numero));
+
+                //Creación lista teléfonos
+                //List<Telefono> telefonos = new List<Telefono>();
+                string[] telefonos = new string[99];
+                telefonos[0] = numero;
+ 
                 //Creación persona
-                Contacto c = new Contacto(rut, nombre, apellido, ciudad, correo, numero, tipoPersona);
+                Contacto c = new Contacto(rut, nombre, apellido, ciudad, correo, telefonos, tipoPersona);
 
                 listaContacto.Add(c);
 

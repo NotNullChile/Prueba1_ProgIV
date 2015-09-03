@@ -88,8 +88,9 @@
                 <td>
                     <input name="txtEmail" type="text" value="<%=c.Email %>"/>
                 </td>
-                <td>
-                    <input name="txtTelefono" type="text" value="<%=c.Telefono %>"/>
+                <td><% int maximo = c.Telefonos.Count();
+                        string listaTelefonos = String.Join("  ", c.Telefonos, 0, maximo); %>
+                    <input name="txtTelefono" type="text" value="<%=listaTelefonos %>"/>
                 </td>
                 <td>
                     <button id="btnEliminar" name="btnEliminar" value="<%=c.Rut %>">Eliminar</button>
