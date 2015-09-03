@@ -29,11 +29,11 @@ namespace SistemaContactos
                 string numero = null;
                 if(ddlTipoFono.Text == "Fijo")
                 {
-                    numero = "0" + txtTelefono.Text;
+                    numero = "Fijo:" + txtTelefono.Text;
                 }
                 if (ddlTipoFono.Text == "Movil")
                 {
-                    numero = "1" + txtTelefono.Text;
+                    numero = "Movil:" + txtTelefono.Text;
                 }
                 bool existeRut = false;
                 if (Session["listaContacto"] != null)

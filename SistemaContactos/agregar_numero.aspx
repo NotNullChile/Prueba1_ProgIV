@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="agregar_contacto.aspx.cs" Inherits="SistemaContactos.agregar_contacto" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="agregar_numero.aspx.cs" Inherits="SistemaContactos.agregar_numero_randy" %>
 
 <!DOCTYPE html>
 
@@ -12,7 +12,7 @@
         <table style="width: 100%" >
             <tr>
                 <td>
-                    <label style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: large; font-weight: bold; font-style: normal; color: #FF0000">Agregar Nuevo Contacto</label></td>
+                    <label style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: large; font-weight: bold; font-style: normal; color: #FF0000">Agregar Teléfono a Contacto Existente:</label></td>
             </tr>   
         </table>
         <hr />  
@@ -54,10 +54,6 @@
         <br />
         <table style="width: 100%">
             <tr>
-                <td> <asp:Image ImageUrl="img/agregar_contacto_big.png" runat="server" /> </td>
-                <td>
-                    <table>
-                    <tr>
                 <td>
                     <asp:Label ID="lblTipoContato" runat="server" Text="Tipo de Contacto"></asp:Label></td>
                 <td>
@@ -72,9 +68,7 @@
                     <asp:label text="Rut" ID="lblRut" runat="server" />
                 </td>
                 <td>
-                    <asp:TextBox ID="txtRut" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="valRut" runat="server" ControlToValidate="txtRut" ErrorMessage="Debe Ingresar un RUT" ForeColor="Red"></asp:RequiredFieldValidator>
-                    <asp:Label ID="lblErrorRut" runat="server"></asp:Label>
+                    <asp:Label ID="lblRutGuardado" runat="server" Text="Label"></asp:Label>
                 </td>
             </tr>
             <tr>
@@ -82,8 +76,7 @@
                     <asp:label text="Nombre" ID="lblNombre" runat="server" />
                 </td>
                 <td>
-                    <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="validNombre" runat="server" ErrorMessage="Debe Ingresar un Nombre" ControlToValidate="txtNombre" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:Label ID="lblNombreGuardado" runat="server" Text="Label"></asp:Label>
                 </td>
             </tr>
             <tr>
@@ -91,8 +84,7 @@
                     <asp:Label ID="lblApellido" runat="server" Text="Apellido"></asp:Label>
                 </td>
                 <td>
-                    <asp:TextBox ID="txtApellido" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="valApellido" runat="server" ControlToValidate="txtApellido" ErrorMessage="Debe Ingresar un Apellido" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:Label ID="lblApellidoGuardado" runat="server" Text="Label"></asp:Label>
                 </td>
             </tr>
             <tr>
@@ -100,8 +92,7 @@
                     <asp:Label ID="lblCiudad" runat="server" Text="Ciudad"></asp:Label>
                 </td>
                 <td>
-                    <asp:TextBox ID="txtCiudad" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtCiudad" ErrorMessage="Debe Ingresar una Ciudad" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:Label ID="lblCiudadGuardada" runat="server" Text="Label"></asp:Label>
                 </td>
             </tr>
             <tr>
@@ -109,10 +100,16 @@
                     <asp:Label ID="lblCorreo" runat="server" Text="Correo"></asp:Label>
                 </td>
                 <td>
-                    <asp:TextBox ID="txtCorreo" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtCorreo" ErrorMessage="Debe Ingresar un Correo Electrónico" ForeColor="Red"></asp:RequiredFieldValidator>
-                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtCorreo" ErrorMessage="Debe usar un formato válido: ejemplo@dominio.cl" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                    <asp:Label ID="lblEmailGuardado" runat="server" Text="Label"></asp:Label>
 
+                </td>
+            </tr>
+                        <tr>
+                <td>
+                    <asp:Label ID="lblTelefonoAntiguo" runat="server" Text="Teléfonos Guardados"></asp:Label>
+                </td>
+                <td>
+                    <asp:Label ID="lblTelefonosGuardados" runat="server" Text="Label"></asp:Label>
                 </td>
             </tr>
             <tr>
@@ -144,15 +141,9 @@
             </tr>
             <tr>
                 <td>
-                     <asp:Button ID="btnAgregarContacto" runat="server" Text="Agregar Contacto" OnClick="btnAgregarContacto_Click" />
+                     <asp:Button ID="btnAgregarTelefono" runat="server" Text="Agregar Telefono" OnClick="btnAgregarTelefono_Click"/>
                 </td>
             </tr>
-</table>
-                </td>
-
-                
-            </tr>
-            
         </table>
     </div>
     </form>
