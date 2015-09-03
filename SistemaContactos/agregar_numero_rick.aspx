@@ -16,22 +16,52 @@
     <form id="form1" runat="server">
     <div>
         <table style="width: 100%;">
+            <%
+                List<Negocio.Contacto> listaContacto = (List<Negocio.Contacto>)Session["listaContacto"]; 
+            List<Negocio.Contacto> agregarNumeros = (List<Negocio.Contacto>)Session["agregarNumeros"];
+            if (Session["agregarNumeros"] != null)
+                    {
+                            for (int i = 0; i < agregarNumeros.Count; i++)
+                            {    
+                                if(agregarNumeros.ElementAt(i).Rut == SistemaContactos.agregar_telefonos_listas.rutObtenido)
+                                {
+             %>
             <tr>
                 <td class="auto-style1">mis numeros</td>
-                <td>&nbsp;</td>
+                <td>
+                    <%
+                        int maximo = agregarNumeros.ElementAt(i).Telefonos.Count();
+                        string listaTelefonos = String.Join("  ", agregarNumeros.ElementAt(i).Telefonos, 0, maximo);%>
+                         <%=listaTelefonos%>
+
+                </td>
             </tr>
             <tr>
                 <td class="auto-style1">Agregar</td>
                 <td>
-                    <input id="Text1" type="text" /></td>
+                    <%
+                        int maximoNumeros = agregarNumeros.ElementAt(i).Telefonos.Count();
+                        for(int j = 0; j < maximoNumeros ; j++)
+                        { 
+                    %>
+                    <input id="txtNumeros" type="text" name="txtNumero<%=j %>" />
+                    <%
+                        }
+                    %>
+                </td>
             </tr>
             <tr>
                 <td class="auto-style1">
-                    <asp:Button ID="Button1" runat="server" Text="Button" Width="121px" />
+                    <asp:Button ID="btnAgregar" runat="server" Text="Agregar" Width="121px" OnClick="btnAgregar_Click" />
                 </td>
                 <td>&nbsp;</td>
             </tr>
-
+            <%
+                                
+                }
+                }
+                }
+                 %>
         </table>
     </div>
     </form>
