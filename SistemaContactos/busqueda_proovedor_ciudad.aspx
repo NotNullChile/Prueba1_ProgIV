@@ -116,7 +116,8 @@
             %>
             <tr>
                 <td>
-                     <input name="txtTipoContacto" id="txtTipoContacto" type="text" value="<%=c.TipoContacto %>" />
+                    <%=c.TipoContacto %>
+                     <input name="txtTipoContacto" id="txtTipoContacto" type="text" value="<%=c.TipoContacto %>" hidden="true" />
                 </td>
                 <td>
                     <%=c.Rut %>
