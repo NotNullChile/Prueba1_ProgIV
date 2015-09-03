@@ -16,7 +16,7 @@
             </tr>
             </table>
 <hr />  
-            <table style="width: 100%; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: medium; font-weight: bold; color: #000000; background-color: #C0C0C0;">
+            <table style="width: 100%; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: medium; font-weight: bold; color: #000000; background-color: #CCCCCC; text-align: center;">
             <tr style="align-content:center">
                 <td>
                     <a href="index.aspx">
@@ -39,19 +39,7 @@
                 <td>
                     <a href="busquedas.aspx">
                         <asp:Image ImageUrl="img/busquedas.png" runat="server" />
-                        <br /> Buscar <br />Contacto
-                    </a>
-                </td>
-                <td>
-                    <a href="modificar_contacto.aspx">
-                        <asp:Image ImageUrl="img/modificar_contacto.png" runat="server" />
-                        <br /> Modificar <br />Contacto
-                    </a>
-                </td>
-                <td>
-                    <a href="eliminar_contacto.aspx">
-                        <asp:Image ImageUrl="img/eliminar_contacto.png" runat="server" />
-                        <br /> Eliminar <br />Contacto
+                        <br /> Buscar, eliminar o <br />Modificar Contacto
                     </a>
                 </td>
                 <td>
@@ -139,23 +127,12 @@
             </tr>
             <tr>
                 <td>
-                    <asp:Label ID="lblTipoTelefono" runat="server" Text="Tipo Teléfono"></asp:Label>
-                </td>
-                <td>
-                    <asp:DropDownList ID="ddlTipoFono" runat="server">
-                        <asp:ListItem>Fijo</asp:ListItem>
-                        <asp:ListItem>Movil</asp:ListItem>
-                    </asp:DropDownList>                   
-                </td>
-                <td>
-                </td>
-            </tr>
-            <tr>
-                <td>
                     <asp:Label ID="lblTelefono" runat="server" Text="Telefono"></asp:Label>
                 </td>
-                <td>                
-                    <input name="txtTelefono" type="text" value="<%=listaContacto.ElementAt(i).Telefonos%>" readonly="true" />  
+                <td> 
+                    <% int maximo = listaContacto.ElementAt(i).Telefonos.Count();
+                       string listaTelefonos = String.Join("  ", listaContacto.ElementAt(i).Telefonos, 0, maximo); %>             
+                    <input name="txtTelefono" type="text" value="<%=listaTelefonos%>" readonly="true" />  
                 </td>
                 <td>
                 </td>

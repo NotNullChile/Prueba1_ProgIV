@@ -136,7 +136,7 @@
                     <asp:Label ID="lblTelefono" runat="server" Text="Telefono"></asp:Label>
                 </td>
                 <td>
-                    <asp:TextBox ID="txtTelefono" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtTelefono" runat="server" TextMode="Number"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtTelefono" ErrorMessage="Debe Ingresar un teléfono" ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
                 <td>

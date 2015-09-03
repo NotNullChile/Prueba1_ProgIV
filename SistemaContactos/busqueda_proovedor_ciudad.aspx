@@ -20,11 +20,11 @@
             <table style="width: 100%" >
             <tr>
                 <td>
-                    <label style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: large; font-weight: bold; font-style: normal; color: #FF0000">Módulo de Gestión de Contactos</label></td>
+                    <label style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: large; font-weight: bold; font-style: normal; color: #FF0000">Módulo de Busqueda de Contactos</label></td>
             </tr>
             </table>
 <hr />  
-            <table style="width: 100%; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: medium; font-weight: bold; color: #000000; background-color: #C0C0C0;">
+            <table style="width: 100%; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: medium; font-weight: bold; color: #000000; background-color: #CCCCCC; text-align: center;">
             <tr style="align-content:center">
                 <td>
                     <a href="index.aspx">
@@ -119,23 +119,29 @@
                      <input name="txtTipoContacto" id="txtTipoContacto" type="text" value="<%=c.TipoContacto %>" />
                 </td>
                 <td>
-                    <input name="txtRut" type="text" value="<%=c.Rut %>"/>
+                    <%=c.Rut %>
+                    <input name="txtRut" type="text" value="<%=c.Rut %>" hidden="true"/>
                 </td>
                 <td>
-                    <input name="txtNombre" type="text" value="<%=c.Nombre %>"/>
+                    <%=c.Nombre %>
+                    <input name="txtNombre" type="text" value="<%=c.Nombre %>" hidden="true"/>
                 </td>
                 <td>
-                    <input name="txtApellido" type="text" value="<%=c.Apellido %>"/>
+                    <%=c.Apellido %>
+                    <input name="txtApellido" type="text" value="<%=c.Apellido %>" hidden="true"/>
                 </td>
                 <td>
-                    <input name="txtCiudad" type="text" value="<%=c.Ciudad %>"/> 
+                    <%=c.Ciudad %>"
+                    <input name="txtCiudad" type="text" value="<%=c.Ciudad %>" hidden="true"/> 
                 </td>
                 <td>
-                    <input name="txtEmail" type="text" value="<%=c.Email %>"/>
+                    <%=c.Email %>
+                    <input name="txtEmail" type="text" value="<%=c.Email %>" hidden="true"/>
                 </td>
                 <td><% int maximo = c.Telefonos.Count();
                         string listaTelefonos = String.Join("  ", c.Telefonos, 0, maximo); %>
-                    <input name="txtTelefono" type="text" value="<%=listaTelefonos %>"/>
+                    <%=listaTelefonos %>
+                    <input name="txtTelefono" type="text" value="<%=listaTelefonos %>" hidden="true"/>
                 </td>
                 <td>
                     <button id="btnEliminar" name="btnEliminar" value="<%=c.Rut %>">Eliminar</button>
