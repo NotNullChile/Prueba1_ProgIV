@@ -63,39 +63,9 @@
             </tr>
         </table>
         <hr />
-        <% 
-            if (Session["listaContacto"] != null)
-            {
-                List<Negocio.Contacto> listaContactos = (List<Negocio.Contacto>)Session["listaContacto"];
-                Response.Write("<table style='width: 50%;'");
-                Response.Write("<tr>");
-                Response.Write("<td>RUT</td>");
-                Response.Write("<td>Nombre</td>");
-                Response.Write("<td>Apellido</td>");
-                Response.Write("<td>Ciudad</td>");
-                Response.Write("<td>email</td>");
-                Response.Write("<td>Teléfonos</td>");
-                Response.Write("<td>Tipo Contacto</td>");
-                Response.Write("</tr>");                
-                foreach (Negocio.Contacto c in listaContactos)
-                {
-                    Response.Write("<tr>");
-                    Response.Write("<td>"+ c.Rut + "</td>");
-                    Response.Write("<td>" + c.Nombre + "</td>");
-                    Response.Write("<td>" + c.Apellido + "</td>");
-                    Response.Write("<td>" + c.Ciudad + "</td>");
-                    Response.Write("<td>"+ c.Email + "</td>");
-                    Response.Write("<td>" + c.Telefono + "</td>");
-                    Response.Write("<td>" + c.TipoContacto + "</td>");
-                    Response.Write("</tr>");
-                }
-                Response.Write("</table>");
-            }
-            else
-            {
-                Response.Redirect("index.aspx");
-            }    
-        %>
+
+
+        
     </div>
     </form>
 </body>
