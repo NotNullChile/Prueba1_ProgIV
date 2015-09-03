@@ -13,7 +13,7 @@ namespace SistemaContactos
         {
 
         }
-
+        public static string rutModificar = "nada";
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
 
@@ -45,6 +45,24 @@ namespace SistemaContactos
 
             }
 
+        }
+        public void modificarContacto()
+        {
+            string rut2 = Request["btnModificar"];
+            if (rut2 != null)
+            {
+                List<Negocio.Contacto> listaContacto = (List<Negocio.Contacto>)Session["listaContacto"];
+                for (int i = 0; i < listaContacto.Count; i++)
+                {
+                    if (listaContacto.ElementAt(i).Rut == rut2)
+                    {
+                        Session["modificarContacto"] = listaContacto;
+                        rutModificar = listaContacto.ElementAt(i).Rut;
+                        Response.Redirect("modificar_contacto.aspx");
+                        break;
+                    }
+                }
+            }
         }
     }
 }
