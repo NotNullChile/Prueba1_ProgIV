@@ -38,10 +38,12 @@ namespace SistemaContactos
                             
                             
                             string[] telefonos = new string[99];
+                            string s = Request["txtNumeros"+j];
                             telefonos[j] = Request["txtNumeros" + j];
                             Contacto c = new Contacto(agregarNumeros.ElementAt(i).Rut, agregarNumeros.ElementAt(i).Nombre, agregarNumeros.ElementAt(i).Apellido, agregarNumeros.ElementAt(i).Ciudad, agregarNumeros.ElementAt(i).Email, telefonos, agregarNumeros.ElementAt(i).TipoContacto);
                             listaContacto.Add(c);
-                            Response.Redirect("index.aspx");
+                            Response.Redirect("agregar_numero_rick.aspx");
+                            break;
                         }
                     }
                 }
