@@ -122,7 +122,7 @@
                     <asp:Label ID="lblCorreo" runat="server" Text="Correo"></asp:Label>
                 </td>
                 <td>                   
-                    <input name="txtCorreo" type="text" placeholder="<%=listaContacto.ElementAt(i).Email%>" />  
+                    <input name="txtCorreo" type="email" placeholder="<%=listaContacto.ElementAt(i).Email%>" />  
                 </td>
             </tr>
             <tr>
