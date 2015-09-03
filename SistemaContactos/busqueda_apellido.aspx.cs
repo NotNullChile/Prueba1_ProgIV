@@ -13,24 +13,29 @@ namespace SistemaContactos
         {
 
         }
-
-        protected void TextBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            mostrarContactosApellido();
+           
         }
-        public void mostrarContactosApellido()
+        public void eliminarContacto()
         {
             //.Where(c => c.Apellido.ToUpper().Equals(txtApellidoBuscar.Text.ToUpper()))
             //Contacto c in listaContacto
             try
             {
-                string algo = Request.Form["txtTipoContacto"];
-
+                string rut2 = Request["btnEliminar"];
+                if(rut2 != null)
+                {
+                List<Negocio.Contacto> listaContacto = (List<Negocio.Contacto>)Session["listaContacto"];
+                for(int i = 0 ; i < listaContacto.Count ; i++)
+                {
+                    if (listaContacto.ElementAt(i).Rut == rut2)
+                    {
+                        listaContacto.RemoveAt(i);
+                        break;
+                    }
+                }
+                }
 
             }
             catch (Exception)
@@ -39,6 +44,11 @@ namespace SistemaContactos
                 
             }
 
+        }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

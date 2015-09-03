@@ -31,6 +31,8 @@
 
                     <asp:Button ID="btnBuscar" runat="server" Text="Buscar" Width="87px" />
 
+                &nbsp;
+
                 </td>
             </tr>
         </table>
@@ -55,12 +57,17 @@
                  try
                  {
                     List<Negocio.Contacto> listaContacto = (List<Negocio.Contacto>)Session["listaContacto"];
+                    if (Request["btnEliminar"] != null)
+                    {
+                        eliminarContacto();
+                    }
                     if(Session["listaContacto"] != null)
                     {
                         if (btnBuscar != null && txtCiudadBuscar.Text.Length > 0)
                         {
                             foreach (Negocio.Contacto c in listaContacto.Where(c => c.Ciudad.ToUpper().Equals(txtCiudadBuscar.Text.ToUpper())).Where(c => c.TipoContacto.Equals("Proveedor")))
                             {
+                               
             %>
             <tr>
                 <td>
@@ -86,9 +93,10 @@
                     <input name="txtTelefono" type="text" value="<%=c.Telefono %>"/>
                 </td>
                 <td>
+                    <button id="btnEliminar" name="btnEliminar" value="<%=c.Rut %>">Eliminar</button>
                 </td>
                 </tr>
-            <% 
+            <%                  
                             }
                         }
                     }

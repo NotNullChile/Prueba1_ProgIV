@@ -55,6 +55,10 @@
                  try
                  {
                     List<Negocio.Contacto> listaContacto = (List<Negocio.Contacto>)Session["listaContacto"];
+                    if (Request["btnEliminar"] != null)
+                    {
+                        eliminarContacto();
+                    }
                     if(Session["listaContacto"] != null)
                     {
                         if (btnBuscar != null && txtDominio.Text.Length > 0)
@@ -86,6 +90,7 @@
                     <input name="txtTelefono" type="text" value="<%=c.Telefono %>"/>
                 </td>
                 <td>
+                    <button id="btnEliminar" name="btnEliminar" value="<%=c.Rut %>">Eliminar</button>
                 </td>
                 </tr>
             <% 

@@ -31,6 +31,9 @@
 
                     <asp:Button ID="btnBuscar" runat="server" Text="Buscar" Width="87px" OnClick="btnBuscar_Click" />
 
+                &nbsp;&nbsp;
+                    <asp:Label ID="lblError" runat="server"></asp:Label>
+
                 </td>
             </tr>
         </table>
@@ -55,12 +58,16 @@
                  try
                  {
                     List<Negocio.Contacto> listaContacto = (List<Negocio.Contacto>)Session["listaContacto"];
+                    if (Request["btnEliminar"] != null)
+                    {
+                        eliminarContacto();
+                    }
                     if(Session["listaContacto"] != null)
                     {
                         if (btnBuscar != null && txtApellidoBuscar.Text.Length > 0)
                         {
                             foreach (Negocio.Contacto c in listaContacto.Where(c => c.Apellido.ToUpper().Equals(txtApellidoBuscar.Text.ToUpper())))
-                            {
+                            {                             
             %>
             <tr>
                 <td>
@@ -68,7 +75,6 @@
                 </td>
                 <td>
                     <input name="txtRut" type="text" value="<%=c.Rut %>"/>
-                    <input name="txtRutHidden" type="hidden" value="<%=c.Rut %>"/>
                 </td>
                 <td>
                     <input name="txtNombre" type="text" value="<%=c.Nombre %>"/>
@@ -86,11 +92,13 @@
                     <input name="txtTelefono" type="text" value="<%=c.Telefono %>"/>
                 </td>
                 <td>
+                    <button id="btnEliminar" name="btnEliminar" value="<%=c.Rut %>">Eliminar</button>
+                    
                 </td>
                 </tr>
-                <% 
-                            }
-                        }
+            <% 
+                        }                       
+                      }
                     }
                     else
                     {
@@ -99,6 +107,7 @@
                 }
                 catch (Exception)
                 {
+                  
                 }
                 %>
             
