@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaContactos", "Sistema
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", "Negocio\Negocio.csproj", "{F3D66740-6400-4E4D-8A6F-118BEEA68F65}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{8C5481B7-E4FA-4DAF-A6A9-C0061BD355E6}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\..\Downloads\ICONS\Axialis Pure Flat 2013 Toolbar Icons\PureFlat-User Management\png_format_32bpp_alpha\48x48\employee_man-add.png = ..\..\..\..\..\Downloads\ICONS\Axialis Pure Flat 2013 Toolbar Icons\PureFlat-User Management\png_format_32bpp_alpha\48x48\employee_man-add.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -58,11 +58,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="agregar_contacto.aspx" />
+    <Content Include="agregar_telefono.aspx" />
     <Content Include="busquedas.aspx" />
     <Content Include="busqueda_apellido.aspx" />
     <Content Include="busqueda_cliente_dominio.aspx" />
     <Content Include="busqueda_proovedor_ciudad.aspx" />
     <Content Include="eliminar_contacto.aspx" />
+    <Content Include="img\home.png" />
+    <Content Include="img\listado_telefonico.png" />
+    <Content Include="img\agregar_contacto.png" />
+    <Content Include="img\eliminar_contacto.png" />
+    <Content Include="img\busquedas.png" />
+    <Content Include="img\modificar_contacto.png" />
+    <Content Include="img\agregar_telefono.png" />
     <Content Include="index.aspx" />
     <Content Include="listado_telefonico.aspx" />
     <Content Include="modificar_contacto.aspx" />
@@ -75,6 +83,13 @@
     </Compile>
     <Compile Include="agregar_contacto.aspx.designer.cs">
       <DependentUpon>agregar_contacto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="agregar_telefono.aspx.cs">
+      <DependentUpon>agregar_telefono.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="agregar_telefono.aspx.designer.cs">
+      <DependentUpon>agregar_telefono.aspx</DependentUpon>
     </Compile>
     <Compile Include="busquedas.aspx.cs">
       <DependentUpon>busquedas.aspx</DependentUpon>
