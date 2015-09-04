@@ -22,6 +22,7 @@ namespace SistemaContactos
                     {
                 Contacto contacto = lc.ElementAt(c);
                 Session["contactoSiendoModificado"] = contacto;
+                lblTipoContactoDDl.Text = contacto.TipoContacto;
                 lblRutGuardado.Text = contacto.Rut;
                 lblNombreGuardado.Text = contacto.Nombre;
                 lblApellidoGuardado.Text = contacto.Apellido;

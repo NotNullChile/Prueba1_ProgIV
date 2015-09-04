@@ -57,10 +57,7 @@
                 <td>
                     <asp:Label ID="lblTipoContato" runat="server" Text="Tipo de Contacto"></asp:Label></td>
                 <td>
-                    <asp:DropDownList ID="ddlTipoContacto" runat="server">
-                        <asp:ListItem>Cliente</asp:ListItem>
-                        <asp:ListItem>Proveedor</asp:ListItem>
-                    </asp:DropDownList>
+                    <asp:Label ID="lblTipoContactoDDl" runat="server" Text=""></asp:Label>
                 </td>
             </tr>
             <tr>
@@ -133,7 +130,7 @@
                     <asp:Label ID="lblTelefono" runat="server" Text="Telefono"></asp:Label>
                 </td>
                 <td>
-                    <asp:TextBox ID="txtTelefono" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtTelefono" runat="server" TextMode="Number"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtTelefono" ErrorMessage="Debe Ingresar un teléfono" ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
                 <td>
