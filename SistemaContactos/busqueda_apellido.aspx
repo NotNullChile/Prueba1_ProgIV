@@ -59,7 +59,7 @@
             </tr>
         </table>
         <hr />
-        <table style="width:100%;">
+        <table style="border: thin solid #C0C0C0; width:100%; font-family: Verdana, Geneva, Tahoma, sans-serif;">
             <tr>
                 <td class="auto-style1">
                     <asp:Label ID="Label1" runat="server" Text="Ingrese apellido a buscar:"></asp:Label>
@@ -81,7 +81,7 @@
         <br />
         <br />
 
-        <table style="width: 100%;">
+        <table style="border: thin solid #C0C0C0; width:100%; font-family: Verdana, Geneva, Tahoma, sans-serif;">
             <tr>
                 <td>Tipo Contacto</td>
                 <td>RUT</td>  

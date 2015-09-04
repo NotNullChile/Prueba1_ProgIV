@@ -56,7 +56,7 @@
             <tr>
                 <td> <asp:Image ImageUrl="img/agregar_contacto_big.png" runat="server" /> </td>
                 <td>
-                    <table>
+                    <table style="font-family: verdana, Geneva, Tahoma, sans-serif">
                     <tr>
                 <td>
                     <asp:Label ID="lblTipoContato" runat="server" Text="Tipo de Contacto"></asp:Label></td>

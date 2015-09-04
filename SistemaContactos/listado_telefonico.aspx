@@ -57,7 +57,7 @@
         </table>
      Listado Teléfonos
         <br />
-        <table style="width:100%;">
+        <table style="border: thin solid #C0C0C0; width:100%; font-family: Verdana, Geneva, Tahoma, sans-serif;">
             <tr>
                 <td class="auto-style1">Apellido</td>
                 <td class="auto-style1">Nombre</td>

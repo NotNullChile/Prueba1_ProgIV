@@ -59,22 +59,27 @@
   <ItemGroup>
     <Content Include="agregar_contacto.aspx" />
     <Content Include="agregar_numero.aspx" />
-    <Content Include="agregar_numero_rick.aspx" />
     <Content Include="agregar_telefono.aspx" />
     <Content Include="busquedas.aspx" />
     <Content Include="busqueda_apellido.aspx" />
     <Content Include="busqueda_cliente_dominio.aspx" />
     <Content Include="busqueda_proovedor_ciudad.aspx" />
-    <Content Include="eliminar_contacto.aspx" />
     <Content Include="img\agregar_contacto_big.png" />
+    <Content Include="img\buscar_apellido.png" />
+    <Content Include="img\employee_man-internet.png" />
+    <Content Include="img\employee_man-list.png" />
+    <Content Include="img\modificar_contacto_big.png" />
     <Content Include="img\index_logo.png" />
     <Content Include="img\home.png" />
+    <Content Include="img\busqueda_ciudad.png" />
     <Content Include="img\listado_telefonico.png" />
     <Content Include="img\agregar_contacto.png" />
     <Content Include="img\eliminar_contacto.png" />
     <Content Include="img\busquedas.png" />
+    <Content Include="img\buscar_dominio.png" />
     <Content Include="img\modificar_contacto.png" />
     <Content Include="img\agregar_telefono.png" />
+    <Content Include="img\agregar_telefono_big.png" />
     <Content Include="index.aspx" />
     <Content Include="listado_telefonico.aspx" />
     <Content Include="modificar_contacto.aspx" />
@@ -94,13 +99,6 @@
     </Compile>
     <Compile Include="agregar_numero.aspx.designer.cs">
       <DependentUpon>agregar_numero.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="agregar_numero_rick.aspx.cs">
-      <DependentUpon>agregar_numero_rick.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="agregar_numero_rick.aspx.designer.cs">
-      <DependentUpon>agregar_numero_rick.aspx</DependentUpon>
     </Compile>
     <Compile Include="agregar_telefono.aspx.cs">
       <DependentUpon>agregar_telefono.aspx</DependentUpon>
@@ -136,13 +134,6 @@
     </Compile>
     <Compile Include="busqueda_proovedor_ciudad.aspx.designer.cs">
       <DependentUpon>busqueda_proovedor_ciudad.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="eliminar_contacto.aspx.cs">
-      <DependentUpon>eliminar_contacto.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="eliminar_contacto.aspx.designer.cs">
-      <DependentUpon>eliminar_contacto.aspx</DependentUpon>
     </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>

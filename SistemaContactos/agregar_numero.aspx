@@ -52,8 +52,12 @@
         </table>
         <hr />
         <br />
-        <table style="width: 100%">
+        <table style="width: 100%; font-family: verdana, Geneva, Tahoma, sans-serif;">
             <tr>
+                <td> <asp:Image ImageUrl="img/agregar_telefono_big.png" runat="server" /> </td>
+                <td>
+                    <table>
+                    <tr>
                 <td>
                     <asp:Label ID="lblTipoContato" runat="server" Text="Tipo de Contacto"></asp:Label></td>
                 <td>
@@ -144,6 +148,10 @@
                      <asp:Button ID="btnAgregarTelefono" runat="server" Text="Agregar Telefono" OnClick="btnAgregarTelefono_Click"/>
                 </td>
             </tr>
+        </table>
+             </td>
+                            </tr>
+            
         </table>
     </div>
     </form>
