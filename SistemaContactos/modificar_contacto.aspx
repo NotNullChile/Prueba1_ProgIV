@@ -51,7 +51,11 @@
             </tr>
         </table>
         <hr />
-        <table>
+        <table style="width: 100%; font-family: Verdana, Geneva, Tahoma, sans-serif;">
+            <tr>
+                <td> <asp:Image ImageUrl="img/modificar_contacto_big.png" runat="server" /> </td>
+                <td>
+                    <table>
             <%
                 List<Negocio.Contacto> contactoModificado = (List<Negocio.Contacto>)Session["modificarContacto"];
                 List<Negocio.Contacto> listaContacto = (List<Negocio.Contacto>)Session["listaContacto"];
@@ -90,7 +94,7 @@
                     
                 </td>
                 <td>
-                    <input name="txtRut" type="text" value="<%=listaContacto.ElementAt(i).Rut%>" readonly="true"/>                   
+                    <input name="txtRut" type="text" value="<%=listaContacto.ElementAt(i).Rut%>" readonly="true" required="true"/>                   
                 </td>
             </tr>
             <tr>
@@ -98,7 +102,7 @@
                     <asp:label text="Nombre" ID="lblNombre" runat="server" />
                 </td>
                 <td>
-                    <input name="txtNombre" type="text" placeholder="<%=listaContacto.ElementAt(i).Nombre%>" />               
+                    <input name="txtNombre" type="text" placeholder="<%=listaContacto.ElementAt(i).Nombre%>"  required="true"/>               
                 </td>
             </tr>
             <tr>
@@ -106,7 +110,7 @@
                     <asp:Label ID="lblApellido" runat="server" Text="Apellido"></asp:Label>
                 </td>
                 <td>
-                    <input name="txtApellido" type="text" placeholder="<%=listaContacto.ElementAt(i).Apellido%>" />                 
+                    <input name="txtApellido" type="text" placeholder="<%=listaContacto.ElementAt(i).Apellido%>"  required="true"/>                 
                 </td>
             </tr>
             <tr>
@@ -114,7 +118,7 @@
                     <asp:Label ID="lblCiudad" runat="server" Text="Ciudad"></asp:Label>
                 </td>
                 <td>                  
-                    <input name="txtCiudad" type="text" placeholder="<%=listaContacto.ElementAt(i).Ciudad%>" />   
+                    <input name="txtCiudad" type="text" placeholder="<%=listaContacto.ElementAt(i).Ciudad%>"  required="true"/>   
                 </td>
             </tr>
             <tr>
@@ -122,7 +126,7 @@
                     <asp:Label ID="lblCorreo" runat="server" Text="Correo"></asp:Label>
                 </td>
                 <td>                   
-                    <input name="txtCorreo" type="email" placeholder="<%=listaContacto.ElementAt(i).Email%>" />  
+                    <input name="txtCorreo" type="email" placeholder="<%=listaContacto.ElementAt(i).Email%>"  required="true"/>  
                 </td>
             </tr>
             <tr>
@@ -132,7 +136,8 @@
                 <td> 
                     <% int maximo = listaContacto.ElementAt(i).Telefonos.Count();
                        string listaTelefonos = String.Join("  ", listaContacto.ElementAt(i).Telefonos, 0, maximo); %>             
-                    <input name="txtTelefono" type="text" value="<%=listaTelefonos%>" readonly="true" />  
+                    <%=listaTelefonos%>
+                    <!--input name="txtTelefono" type="text" value="listaTelefonos%>" readonly="true" /-->  
                 </td>
                 <td>
                 </td>
@@ -153,7 +158,12 @@
             } 
             %>
         </table>
+ </td>
 
+                
+            </tr>
+            
+        </table>
         
     </div>
     </form>

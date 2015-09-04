@@ -51,9 +51,26 @@
     <hr />
     <form id="form1" runat="server">
     <div>
-        <a href="busqueda_apellido.aspx">Busqueda apellido</a>
-        <a href="busqueda_cliente_dominio.aspx">Busqueda Cliente por Dominio</a>
-        <a href="busqueda_proovedor_ciudad.aspx">Busqueda Proveedor por Ciudad</a>
+        <table style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+            <tr>
+                <td>
+                    <asp:Image ImageUrl="img/buscar_apellido.png" runat="server" />
+                </td>
+                <td><a href="busqueda_apellido.aspx">Busqueda por Apellido</a></td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Image ImageUrl="img/buscar_dominio.png" runat="server" />
+                </td>
+                <td><a href="busqueda_cliente_dominio.aspx">Busqueda de Cliente por Dominio</a></td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Image ImageUrl="img/busqueda_ciudad.png" runat="server" />
+                </td>
+                <td><a href="busqueda_proovedor_ciudad.aspx">Busqueda de Proveedor por Ciudad</a></td>
+            </tr>
+        </table>
     </div>
     </form>
 </body>
